@@ -1,0 +1,5 @@
+# To Do
+[] add basic files
+[] add unicode support
+[] explain how to use mishkal with it
+ 

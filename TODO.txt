@@ -1,5 +1,9 @@
 # To Do
-[] add basic files
-[] add unicode support
+[x] add basic files
+[x] add unicode support
 [] explain how to use mishkal with it
+[] test it with flite
+[] web demo
+[] GUI demo
+
  

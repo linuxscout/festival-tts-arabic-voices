@@ -14,7 +14,7 @@ buckwalter = { #mapping from Arabic script to Buckwalter
 	u'\u0625': u'<' , u'\u0622': u'|' , u'\u0627': u'A' , u'\u0649': u'Y',
 	u'\u0629': u'p' , u'\u064a': u'y' , u'\u0644': u'l' , u'\u0648': u'w',
 	u'\u064b': u'F' , u'\u064c': u'N' , u'\u064d': u'K' , u'\u064e': u'a',
-	u'\u064f': u'u' , u'\u0650': u'i' , u'\u0651': u'~' , u'\u0652': u'o'
+	u'\u064f': u'u' , u'\u0650': u'i' , u'\u0651': u'~' , u'\u0652': u'o', ',':' sil ', ';':' sil ', '.':' sil sil ', '!':' sil sil ', '?':' sil sil ', '/':' sil ', ':':' sil ', '-':' sil ', '،':' sil '
 }
 
 def arabicToBuckwalter(word): #Convert input string to Buckwalter

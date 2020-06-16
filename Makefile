@@ -41,3 +41,5 @@ clean:
 distclean:
 
 reinstall: uninstall install
+publish:
+	git push origin master

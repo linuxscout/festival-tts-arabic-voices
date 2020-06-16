@@ -391,28 +391,28 @@ Basic lexicon should (must ?) have basic letters, symbols and punctuation."
 ;    (list word features syls))
 ;  )
 
-;(define (ara_norm_map_modify ps)
-;  (cond
-;   ((null ps) nil)
-;   ((null (cdr ps)) ps)
-;   ((assoc_string (string-append (car ps) (cadr ps))
-;                   ara_norm_ziad_char_phone_map)
-;    (cons
-;     (string-append (car ps) (cadr ps))
-;     (ara_norm_map_modify (cddr ps))))
-;   (t
-;    (cons
-;     (car ps)
-;     (ara_norm_map_modify (cdr ps))))))
+(define (ara_norm_map_modify ps)
+  (cond
+   ((null ps) nil)
+   ((null (cdr ps)) ps)
+   ((assoc_string (string-append (car ps) (cadr ps))
+                   ara_norm_ziad_char_phone_map)
+    (cons
+     (string-append (car ps) (cadr ps))
+     (ara_norm_map_modify (cddr ps))))
+   (t
+    (cons
+     (car ps)
+     (ara_norm_map_modify (cdr ps))))))
 
-;(define (ara_norm_map_phones p)
-;  (cond
-;   ((null p) nil)
-;   (t
-;    (let ((a (assoc_string (car p) ara_norm_ziad_char_phone_map)))
-;      (cond
-;       (a (cons (cadr a) (ara_norm_map_phones (cdr p))))
-;       (t (ara_norm_map_phones (cdr p))))))))
+(define (ara_norm_map_phones p)
+  (cond
+   ((null p) nil)
+   (t
+    (let ((a (assoc_string (car p) ara_norm_ziad_char_phone_map)))
+      (cond
+       (a (cons (cadr a) (ara_norm_map_phones (cdr p))))
+       (t (ara_norm_map_phones (cdr p))))))))
 
 (define (ara_norm_is_vowel x)
   (string-equal "+" (phone_feature x "vc")))
@@ -452,120 +452,120 @@ t if this is a syl break, nil otherwise."
     (reverse syls)))
 
     ;; utf8-sampa map based on unitran 
-;(if (probe_file (path-append ara_norm_ziad::dir "festvox/ara_norm_ziad_char_phone_map.scm"))
-;    (begin
-;      (set! ara_norm_ziad_char_phone_map
-;            (load (path-append ara_norm_ziad::dir 
-;                               "festvox/ara_norm_ziad_char_phone_map.scm") t))
-;	(load (path-append ara_norm_ziad::dir 
-;                           "festvox/unicode_sampa_mapping.scm"))
 
     ;; utf8-indic-sampa letter based one
-;    (define (ara_norm_lts_function word features)
-;      "(ara_norm_lts_function WORD FEATURES)
-;Return pronunciation of word not in lexicon."
-;      (let ((dword word) (phones) (syls) (aphones))
-;        (set! aphones (ara_norm_map_modify (utf8explode dword)))
-;        (set! phones (ara_norm_map_phones aphones))
-;	(set! phones (sampa_lookup phones))
-;        (set! phones (indic_unicode_lts sphones))
-;        (set! syls (ara_norm_lex_syllabify_phstress phones))
-;        (list word features syls)))
-;    ))
+    (define (ara_norm_lts_function word features)
+      "(ara_norm_lts_function WORD FEATURES)
+Return pronunciation of word not in lexicon."
+      (let ((dword word) (phones) (syls) (aphones))
+        (set! aphones (ara_norm_map_modify (utf8explode dword)))
+        (set! phones (ara_norm_map_phones aphones))
+	(set! phones (sampa_lookup phones))
+        (set! phones (indic_unicode_lts sphones))
+        (set! syls (ara_norm_lex_syllabify_phstress phones))
+        (list word features syls)))
+    
 
-;(define (sampa_lookup gphones)
-;  (let ((phlist nil) (sp nil))
-;    (mapcar 
-;     (lambda (gg)
-;       (set! sp (assoc_string gg unicode_sampa_mapping))
-;       (if sp
-;           (set! phlist (append (car (cadr sp)) phlist))
-;           (set! phlist (cons gg phlist))))
-;     gphones)
-;    (reverse phlist)))
+(define (sampa_lookup gphones)
+  (let ((phlist nil) (sp nil))
+    (mapcar 
+     (lambda (gg)
+       (set! sp (assoc_string gg unicode_sampa_mapping))
+       (if sp
+           (set! phlist (append (car (cadr sp)) phlist))
+           (set! phlist (cons gg phlist))))
+     gphones)
+    (reverse phlist)))
 
-;(define (indic_unicode_lts phlist)
-;	(set! finallist (list))
-;	(set! graphemecount 0)
-;	(set! prevgrapheme (list))
-;	(set! totgcnt (- (length phlist) 1))
-;	(mapcar (lambda (ggg)
-;		(if (symbol? (car ggg))
-;		(begin
-;		(cond
-;			;; schwa deletion for the last consonant
-;			((equal? graphemecount totgcnt)
-;			(begin
-;				(if (string-equal (phone_feature (car ggg) 'vc) "-")
-;				(begin 
-;					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") 
-;					(set! finallist (append  finallist prevgrapheme)))
-;					;(set! finallist (append finallist (list (car ggg)))) ;appropriate for hindi
-;					(set! finallist (append finallist  ggg)) ; for generic (non-schwa final) indic
-;				)
-;				(begin 
-;					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") 
-;					(set! finallist (append finallist (list (car prevgrapheme)))))
-;					(set! finallist (append finallist (list (car ggg))))
-;				))
-;			))
-;			;; generic treatment for an intermediate grapheme
-;			((and (> graphemecount 0) (< graphemecount totgcnt))
-;			(begin
-;				(cond 
-;					;; If current is vowel, remove the previous schwa
-;					((and (string-equal (phone_feature (car ggg) 'vc) "+") (string-equal (phone_feature (car prevgrapheme) 'vc) "-"))
-;					(begin 
-;						(set! finallist (append finallist (list (car prevgrapheme))))
-;						(set! finallist (append finallist (list (car ggg))))
-;					))
-;					;; If current is consonant and previous is consonant, dump all of previous 
-;					((and  (string-equal (phone_feature (car ggg) 'vc) "-") (string-equal (phone_feature (car prevgrapheme) 'vc) "-"))
-;					(set! finallist (append finallist prevgrapheme)))
-;					(t 
-;					 t)
-;				)
-;			))
-;			((and (eq? graphemecount 0) (string-equal (phone_feature (car ggg) 'vc) "+"))
-;				(set! finallist (list (car ggg)))
-;			)
-;			(t 
-;			t)
-;		)
-;		(set! graphemecount (+ 1 graphemecount))
-;		(set! prevgrapheme ggg)
-;		)
-;		(begin 
-;			(cond
-;				((equal? (car ggg) '(P))
-;					(set! finallist (append finallist (list (car prevgrapheme))))
-;					(set! prevgrapheme (list))
-;				)
-;				((equal? (car ggg) '(M))
-;					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") (set! finallist (append finallist prevgrapheme)))
-;					(set! finallist (append finallist (list "nB")))
-;					(set! prevgrapheme (list))
-;				)
-;				((equal? (car ggg) '(CD))
-;					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") (set! finallist (append finallist prevgrapheme)))
-;					(set! finallist (append finallist (list "nB")))
-;					(set! prevgrapheme (list))
-;				)
-;				(t
-;				t)
-;				;(format t "debug: todo \n")
-;			)
-;			(set! graphemecount (+ 1 graphemecount))
-;		)
-;	)
-;	) phlist)
-;finallist)
+(define (indic_unicode_lts phlist)
+	(set! finallist (list))
+	(set! graphemecount 0)
+	(set! prevgrapheme (list))
+	(set! totgcnt (- (length phlist) 1))
+	(mapcar (lambda (ggg)
+		(if (symbol? (car ggg))
+		(begin
+		(cond
+			;; schwa deletion for the last consonant
+			((equal? graphemecount totgcnt)
+			(begin
+				(if (string-equal (phone_feature (car ggg) 'vc) "-")
+				(begin 
+					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") 
+					(set! finallist (append  finallist prevgrapheme)))
+					;(set! finallist (append finallist (list (car ggg)))) ;appropriate for hindi
+					(set! finallist (append finallist  ggg)) ; for generic (non-schwa final) indic
+				)
+				(begin 
+					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") 
+					(set! finallist (append finallist (list (car prevgrapheme)))))
+					(set! finallist (append finallist (list (car ggg))))
+				))
+			))
+			;; generic treatment for an intermediate grapheme
+			((and (> graphemecount 0) (< graphemecount totgcnt))
+			(begin
+				(cond 
+					;; If current is vowel, remove the previous schwa
+					((and (string-equal (phone_feature (car ggg) 'vc) "+") (string-equal (phone_feature (car prevgrapheme) 'vc) "-"))
+					(begin 
+						(set! finallist (append finallist (list (car prevgrapheme))))
+						(set! finallist (append finallist (list (car ggg))))
+					))
+					;; If current is consonant and previous is consonant, dump all of previous 
+					((and  (string-equal (phone_feature (car ggg) 'vc) "-") (string-equal (phone_feature (car prevgrapheme) 'vc) "-"))
+					(set! finallist (append finallist prevgrapheme)))
+					(t 
+					 t)
+				)
+			))
+			((and (eq? graphemecount 0) (string-equal (phone_feature (car ggg) 'vc) "+"))
+				(set! finallist (list (car ggg)))
+			)
+			(t 
+			t)
+		)
+		(set! graphemecount (+ 1 graphemecount))
+		(set! prevgrapheme ggg)
+		)
+		(begin 
+			(cond
+				((equal? (car ggg) '(P))
+					(set! finallist (append finallist (list (car prevgrapheme))))
+					(set! prevgrapheme (list))
+				)
+				((equal? (car ggg) '(M))
+					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") (set! finallist (append finallist prevgrapheme)))
+					(set! finallist (append finallist (list "nB")))
+					(set! prevgrapheme (list))
+				)
+				((equal? (car ggg) '(CD))
+					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") (set! finallist (append finallist prevgrapheme)))
+					(set! finallist (append finallist (list "nB")))
+					(set! prevgrapheme (list))
+				)
+				(t
+				t)
+				;(format t "debug: todo \n")
+			)
+			(set! graphemecount (+ 1 graphemecount))
+		)
+	)
+	) phlist)
+finallist)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; OR: Hand written letter to sound rules
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(if (probe_file (path-append ara_norm_ziad_hts::hts_dir "/usr/share/festival/voices/arabic/ara_norm_ziad_hts/festvox/ara_norm_ziad_char_phone_map.scm"))
+    (begin
+      (set! ara_norm_ziad_char_phone_map
+            (load (path-append ara_norm_ziad_hts::hts_dir 
+                               "/usr/share/festival/voices/arabic/ara_norm_ziad_hts/festvox/ara_norm_ziad_char_phone_map.scm") t))
+	(load (path-append ara_norm_ziad_hts::hts_dir 
+                           "/usr/share/festival/voices/arabic/ara_norm_ziad_hts/festvox/unicode_sampa_mapping.scm"))
 
 ; ;;;  Function called when word not found in lexicon
  (define (ara_norm_lts_function word features)
@@ -574,17 +574,21 @@ t if this is a syl break, nil otherwise."
 
 ;   (format stderr "failed to find pronunciation for %s\n" word)
    (let ((dword (downcase word)))
+        (set! aphones (ara_norm_map_modify (utf8explode word)))
+        (set! phones (ara_norm_map_phones aphones))
+	(set! phones (sampa_lookup phones))
+;        (set! syls (ara_norm_lex_syllabify_phstress phones))
 ;     ;; Note you may need to use a letter to sound rule set to do
 ;     ;; casing if the language has non-ascii characters in it.
-     (if (lts.in.alphabet word 'ara_norm)
+     (if (lts.in.alphabet phones 'ara_norm)
  	(list
- 	 word
+ 	 phones
  	 features
 ; 	 ;; This syllabification is almost certainly wrong for
 ; 	 ;; this language (its not even very good for English)
 ; 	 ;; but it will give you something to start off with
  	 (lex.syllabify.phstress
- 	   (lts.apply word 'ara_norm)))
+ 	   (lts.apply phones 'ara_norm)))
  	(begin
 ; 	  (format stderr "unpronouncable word %s\n" word)
 ; 	  ;; Put in a word that means "unknown" with its pronunciation
@@ -592,8 +596,14 @@ t if this is a syl break, nil otherwise."
 )
 )
 )
+;(let ((dword word) (phones) (syls) (aphones))
+;        (set! aphones (ara_norm_map_modify (utf8explode dword)))
+;        (set! phones (ara_norm_map_phones aphones))
+;	(set! phones (sampa_lookup phones))
+;        (set! syls (ara_norm_lex_syllabify_phstress phones))
+;        (list word features syls))
  )
-
+))
 ; ;; You may or may not be able to write a letter to sound rule set for
 ; ;; your language.  If its largely lexicon based learning a rule
 ; ;; set will be better and easier that writing one (probably).
@@ -624,7 +634,6 @@ t if this is a syl break, nil otherwise."
   (;;start rules
 
 	  ( # [ s i l ] # = sil );;
-
 	;;;; Al chamsiya fi awal al kalima
 	  ( # [ A l ] t = ah a )
 	  ( # [ A l ] ^ = ah a )

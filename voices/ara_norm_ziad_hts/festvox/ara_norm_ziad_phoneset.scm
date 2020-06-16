@@ -160,21 +160,21 @@
    (A    +   s   3   2   -   0   0   0) ;;fatha+(ص,ض,ط,ظ,ق) 
    (AA   +   l   3   2   -   0   0   0) ;;fatha+mad+(ص,ض,ط,ظ,ق) (fiha chak)
 
-   (i    +   s   1   1   -   0   0   0) ;;nawar:i0 kasra
-   (ia   +   s   1   1   -   0   0   0) ;;nawar:i1 kasra toukarib al fatha
-   (ii   +   l   1   1   -   0   0   0) ;;nawar:ii0 kasra+mad
+   (i    +   s   1   1   -   0   0   0) ;;ziad:i0 kasra
+   (ia   +   s   1   1   -   0   0   0) ;;ziad:i1 kasra toukarib al fatha
+   (ii   +   l   1   1   -   0   0   0) ;;ziad:ii0 kasra+mad
 
-   (I    +   s   1   1   -   0   0   0) ;;nawar:I0 kasra+(ص,ض,ط,ظ,ق)
-   (II   +   l   1   1   -   0   0   0) ;;nawar:II0 kasra+mad+(ص,ض,ط,ظ,ق) (fiha chak)
+   (I    +   s   1   1   -   0   0   0) ;;ziad:I0 kasra+(ص,ض,ط,ظ,ق)
+   (II   +   l   1   1   -   0   0   0) ;;ziad:II0 kasra+mad+(ص,ض,ط,ظ,ق) (fiha chak)
 
-   (u    +   s   1   3   +   0   0   0) ;;nawar:u0 dama
-   (uu   +   l   1   3   +   0   0   0) ;;nawar:uu0 dama+mad
+   (u    +   s   1   3   +   0   0   0) ;;ziad:u0 dama
+   (uu   +   l   1   3   +   0   0   0) ;;ziad:uu0 dama+mad
    
-   (U    +   s   1   3   +   0   0   0) ;;nawar:U0 dama+(ص,ض,ط,ظ,ق)
-   (UU   +   l   1   3   +   0   0   0) ;;nawar:UU0 dama+mad+(ص,ض,ط,ظ,ق) (fiha chak)
+   (U    +   s   1   3   +   0   0   0) ;;ziad:U0 dama+(ص,ض,ط,ظ,ق)
+   (UU   +   l   1   3   +   0   0   0) ;;ziad:UU0 dama+mad+(ص,ض,ط,ظ,ق) (fiha chak)
 
-   (ua   +   s   1   3   +   0   0   0) ;;nawar:u1 dama toukarib al fatha
-   (uua  +   l   1   3   +   0   0   0) ;;nawar:uu1 (الفيديو) vidyuua
+   (ua   +   s   1   3   +   0   0   0) ;;ziad:u1 dama toukarib al fatha
+   (uua  +   l   1   3   +   0   0   0) ;;ziad:uu1 (الفيديو) vidyuua
 
    (sil  -   0   0   0   0   0   0   -) ;;
 

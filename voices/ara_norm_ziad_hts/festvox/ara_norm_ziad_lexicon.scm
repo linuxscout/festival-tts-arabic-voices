@@ -36,339 +36,6 @@
 
 ;;; Load any necessary files here
 
-(define (ara_norm_addenda)
-  "(ara_norm_addenda)
-Basic lexicon should (must ?) have basic letters, symbols and punctuation."
-
-;;; Pronunciation of letters in the alphabet
-;(lex.add.entry '("a" nn (((a) 0))))
-;(lex.add.entry '("b" nn (((b e) 0))))
-;(lex.add.entry '("c" nn (((th e) 0))))
-;(lex.add.entry '("d" nn (((d e) 0))))
-;(lex.add.entry '("e" nn (((e) 0))))
-; ...
-
-;;; Symbols ...
-;(lex.add.entry 
-; '("*" n (((a s) 0) ((t e) 0) ((r i1 s) 1)  ((k o) 0))))
-;(lex.add.entry 
-; '("%" n (((p o r) 0) ((th i e1 n) 1) ((t o) 0))))
-
-;; Basic punctuation must be in with nil pronunciation
-(lex.add.entry '("." punc nil))
-;(lex.add.entry '("." nn (((p u1 n) 1) ((t o) 0))))
-(lex.add.entry '("'" punc nil))
-(lex.add.entry '(":" punc nil))
-(lex.add.entry '(";" punc nil))
-(lex.add.entry '("," punc nil))
-;(lex.add.entry '("," nn (((k o1) 1) ((m a) 0))))
-(lex.add.entry '("-" punc nil))
-(lex.add.entry '("\"" punc nil))
-(lex.add.entry '("`" punc nil))
-(lex.add.entry '("?" punc nil))
-(lex.add.entry '("!" punc nil))
-
-;;m=هذا
-(lex.add.entry  
-'("h*A" nil (((h aa) 0) ((th aa) 0))))  
-(lex.add.entry  
-'("ha*aA" nil (((h aa) 0) ((th aa) 0)))) 
-;;m=بهذا
-(lex.add.entry  
-'("bh*A" nil (((b i) 0) ((h aa) 0) ((th aa) 0))))  
-(lex.add.entry  
-'("biha*aA" nil (((b i) 0) ((h aa) 0) ((th aa) 0))))  
-;;m=كهذا
-(lex.add.entry  
-'("kh*A" nil (((k a) 0) ((h aa) 0) ((th aa) 0)))) 
-(lex.add.entry   
-'("kaha*aA" nil (((k a) 0) ((h aa) 0) ((th aa) 0)))) 
-;;m=فهذا
-(lex.add.entry  
-'("fh*A" nil (((f a) 0) ((h aa) 0) ((th aa) 0)))) 
-(lex.add.entry  
-'("faha*aA" nil (((f a) 0) ((h aa) 0) ((th aa) 0)))) 
-;;m=هذه
-(lex.add.entry  
-'("h*h" nil (((h aa) 0) ((th i) 0) ((h i) 0)))) 
-(lex.add.entry  
-'("ha*ihi" nil (((h aa) 0) ((th i) 0) ((h i) 0)))) 
-;;m=بهذه
-(lex.add.entry  
-'("bh*h" nil (((b i) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-(lex.add.entry  
-'("biha*ihi" nil (((b i) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-;;m=كهذه
-(lex.add.entry  
-'("kh*h" nil (((k a) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-(lex.add.entry  
-'("kaha*ihi" nil (((k a) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-;;m=فهذه
-(lex.add.entry  
-'("fh*h" nil (((f a) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-(lex.add.entry  
-'("faha*ihi" nil (((f a) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-;;m=هذان
-(lex.add.entry  
-'("h*An" nil (((h aa) 0) ((th aa) 0) ((n i) 0))))
-(lex.add.entry  
-'("ha*aAni" nil (((h aa) 0) ((th aa) 0) ((n i) 0))))
-;;m=هؤلاء
-(lex.add.entry  
-'("h&lA\'" nil (((h aa) 0) ((ah u) 0) ((l aa) 0) ((ah i) 0)))) 
-(lex.add.entry  
-'("ha&ulaA\'i" nil (((h aa) 0) ((ah u) 0) ((l aa) 0) ((ah i) 0)))) 
-;;m=ذلك
-(lex.add.entry  
-'("*lk" nil (((th aa) 0) ((l i) 0) ((k a) 0))))
-(lex.add.entry  
-'("*alika" nil (((th aa) 0) ((l i) 0) ((k a) 0))))
-;;m=بذلك
-(lex.add.entry  
-'("b*lk" nil (((b i) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-(lex.add.entry  
-'("bi*alika" nil (((b i) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-;;m=كذلك
-(lex.add.entry  
-'("k*lk" nil (((k a) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-(lex.add.entry  
-'("ka*alika" nil (((k a) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-;;m=ذلكم
-(lex.add.entry  
-'("*lkm" nil (((th aa) 0) ((l i) 0) ((k u m) 0))))
-(lex.add.entry  
-'("*alikumo" nil (((th aa) 0) ((l i) 0) ((k u m) 0))))
-;;m=أولئك
-(lex.add.entry  
-'(">wl}k" nil (((ah u) 0) ((l aa) 0) ((ah i) 0) ((k a) 0))))
-(lex.add.entry  
-'(">uwla}ika" nil (((ah u) 0) ((l aa) 0) ((ah i) 0) ((k a) 0))))
-;;m=طه
-(lex.add.entry  
-'("Th" nil (((T aa) 0) ((h a) 0))))
-(lex.add.entry  
-'("Taha" nil (((T aa) 0) ((h a) 0))))
-;;m=لكن
-(lex.add.entry  
-'("lkn" nil (((l aa) 0) ((k i) 0) ((nn a) 0))))
-(lex.add.entry  
-'("lakin~a" nil (((l aa) 0) ((k i) 0) ((nn a) 0))))
-(lex.add.entry  
-'("lakino" nil (((l aa) 0) ((k i n) 0))))
-;;m=لكنه 
-(lex.add.entry  
-'("lknh" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((h u) 0))))
-(lex.add.entry  
-'("lakin~ahu" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((h u) 0))))
-;;m=لكنها 
-(lex.add.entry  
-'("lknhA" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((h aa) 0))))
-(lex.add.entry  
-'("lakin~ahaA" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((h aa) 0))))
-;;m=لكنهم 
-(lex.add.entry  
-'("lknhm" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((h u m) 0))))
-(lex.add.entry  
-'("lakin~ahumo" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((h u m) 0))))
-;;m=لكنك 
-(lex.add.entry  
-'("lakin~aka" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((k a) 0))))
-(lex.add.entry  
-'("lakin~aki" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((k i) 0))))
-;;m=لكنكم 
-(lex.add.entry  
-'("lknkm" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((k u m) 0))))
-(lex.add.entry  
-'("lakin~akumo" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((k u m) 0))))
-;;m=لكنكما 
-(lex.add.entry  
-'("lknkmA" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((k u) 0) ((m aa) 0))))
-(lex.add.entry  
-'("lakin~akumaA" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((k u) 0) ((m aa) 0))))
-;;m=لكننا 
-(lex.add.entry  
-'("lknnA" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((n aa) 0))))
-(lex.add.entry  
-'("lakin~anaA" nil (((l aa) 0) ((k i) 0) ((nn a) 0) ((n aa) 0))))
-;;m=هذين
-(lex.add.entry  
-'("h*yn" nil (((h aa) 0) ((th a y) 0) ((n i) 0))))  
-(lex.add.entry  
-'("ha*ayoni" nil (((h aa) 0) ((th a y) 0) ((n i) 0))))  
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;; + waw +;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;m=وهذا
-(lex.add.entry  
-'("wh*A" nil (((w a) 0) ((h aa) 0) ((th aa) 0))))  
-(lex.add.entry  
-'("waha*aA" nil (((w a) 0) ((h aa) 0) ((th aa) 0)))) 
-;;m=وبهذا
-(lex.add.entry  
-'("wbh*A" nil (((w a) 0) ((b i) 0) ((h aa) 0) ((th aa) 0))))  
-(lex.add.entry  
-'("wabiha*aA" nil (((w a) 0) ((b i) 0) ((h aa) 0) ((th aa) 0))))  
-;;m=وكهذا
-(lex.add.entry  
-'("wkh*A" nil (((w a) 0) ((k a) 0) ((h aa) 0) ((th aa) 0)))) 
-(lex.add.entry   
-'("wakaha*aA" nil (((w a) 0) ((k a) 0) ((h aa) 0) ((th aa) 0)))) 
-;;m=وهذه
-(lex.add.entry  
-'("wh*h" nil (((w a) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-(lex.add.entry  
-'("waha*ihi" nil (((w a) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-;;m=وبهذه
-(lex.add.entry  
-'("wbh*h" nil (((w a) 0) ((b i) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-(lex.add.entry  
-'("wabiha*ihi" nil (((w a) 0) ((b i) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-;;m=وكهذه
-(lex.add.entry  
-'("wkh*h" nil (((w a) 0) ((k a) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-(lex.add.entry  
-'("wakaha*ihi" nil (((w a) 0) ((k a) 0) ((h aa) 0) ((th i) 0) ((h i) 0)))) 
-;;m=وهذان
-(lex.add.entry  
-'("wh*An" nil (((w a) 0) ((h aa) 0) ((th aa) 0) ((n i) 0))))
-(lex.add.entry  
-'("waha*aAni" nil (((w a) 0) ((h aa) 0) ((th aa) 0) ((n i) 0))))
-;;m=وهؤلاء
-(lex.add.entry  
-'("wh&lA\'" nil (((w a) 0) ((h aa) 0) ((ah u) 0) ((l aa) 0) ((ah i) 0)))) 
-(lex.add.entry  
-'("waha&ulaA\'i" nil (((w a) 0) ((h aa) 0) ((ah u) 0) ((l aa) 0) ((ah i) 0)))) 
-;;m=وذلك
-(lex.add.entry  
-'("w*lk" nil (((w a) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-(lex.add.entry  
-'("wa*alika" nil (((w a) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-;;m=وبذلك
-(lex.add.entry  
-'("wb*lk" nil (((w a) 0) ((b i) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-(lex.add.entry  
-'("wabi*alika" nil (((w a) 0) ((b i) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-;;m=وكذلك
-(lex.add.entry  
-'("wk*lk" nil (((w a) 0) ((k a) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-(lex.add.entry  
-'("waka*alika" nil (((w a) 0) ((k a) 0) ((th aa) 0) ((l i) 0) ((k a) 0))))
-;;m=وذلكم
-(lex.add.entry  
-'("w*lkm" nil (((w a) 0) ((th aa) 0) ((l i) 0) ((k u m) 0))))
-(lex.add.entry  
-'("wa*alikumo" nil (((w a) 0) ((th aa) 0) ((l i) 0) ((k u m) 0))))
-;;m=وأولئك
-(lex.add.entry  
-'("w>wl}k" nil (((w a) 0) ((ah u) 0) ((l aa) 0) ((ah i) 0) ((k a) 0))))
-(lex.add.entry  
-'("wa>uwla}ika" nil (((w a) 0) ((ah u) 0) ((l aa) 0) ((ah i) 0) ((k a) 0))))
-;;m=وطه
-(lex.add.entry  
-'("wTh" nil (((w a) 0) ((T aa) 0) ((h a) 0))))
-(lex.add.entry  
-'("waTaha" nil (((w a) 0) ((T aa) 0) ((h a) 0))))
-;;m=ولكن
-(lex.add.entry  
-'("wlkn" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0))))
-(lex.add.entry  
-'("walakin~a" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0))))
-(lex.add.entry  
-'("walakino" nil (((w a) 0) ((l aa) 0) ((k i n) 0))))
-;;m=ولكنه 
-(lex.add.entry  
-'("wlknh" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((h u) 0))))
-(lex.add.entry  
-'("walakin~ahu" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((h u) 0))))
-;;m=ولكنها 
-(lex.add.entry  
-'("wlknhA" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((h aa) 0))))
-(lex.add.entry  
-'("walakin~ahaA" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((h aa) 0))))
-;;m=ولكنهم 
-(lex.add.entry  
-'("wlknhm" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((h u m) 0))))
-(lex.add.entry  
-'("walakin~ahumo" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((h u m) 0))))
-;;m=ولكنك 
-(lex.add.entry  
-'("wlakin~aka" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((k a) 0))))
-(lex.add.entry  
-'("walakin~aki" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((k i) 0))))
-;;m=ولكنكم 
-(lex.add.entry  
-'("wlknkm" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((k u m) 0))))
-(lex.add.entry  
-'("walakin~akumo" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((k u m) 0))))
-;;m=ولكنكما 
-(lex.add.entry  
-'("wlknkmA" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((k u) 0) ((m aa) 0))))
-(lex.add.entry  
-'("walakin~akumaA" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((k u) 0) ((m aa) 0))))
-;;m=ولكننا 
-(lex.add.entry  
-'("wlknnA" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((n aa) 0))))
-(lex.add.entry  
-'("walakin~anaA" nil (((w a) 0) ((l aa) 0) ((k i) 0) ((nn a) 0) ((n aa) 0))))
-;;m=وهذين
-(lex.add.entry  
-'("wh*yn" nil (((w a) 0) ((h aa) 0) ((th a y) 0) ((n i) 0))))  
-(lex.add.entry  
-'("waha*ayoni" nil (((w a) 0) ((h aa) 0) ((th a y) 0) ((n i) 0))))
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;m=و 
-(lex.add.entry  
-'("w" nil (((w a) 0))))
-;;m=او 
-(lex.add.entry  
-'("Aw" nil (((ah a w) 0))))
-(lex.add.entry  
-'("Awo" nil (((ah a w) 0))))
-;;m=أو 
-(lex.add.entry  
-'(">w" nil (((ah a w) 0))))
-(lex.add.entry  
-'(">wo" nil (((ah a w) 0))))
-;;m=الف   
-(lex.add.entry  
-'("Alf" nil (((ah a l f) 0))))
-;;m=ألف   
-(lex.add.entry  
-'(">lf" nil (((ah a l f) 0))))
-;;m=بألف   
-(lex.add.entry  
-'("b>lf" nil (((b i) 0) ((ah a l f) 0))))
-;;m=فألف   
-(lex.add.entry  
-'("f>lf" nil (((f a) 0) ((ah a l f) 0))))
-;;m=والف   
-(lex.add.entry  
-'("wAlf" nil (((w a) 0) ((ah a l f) 0))))
-;;m=وألف   
-(lex.add.entry  
-'("w>lf" nil (((w a) 0) ((ah a l f) 0))))
-;;m=وبألف   
-(lex.add.entry  
-'("wb>lf" nil (((w a) 0) ((b i) 0) ((ah a l f) 0))))
-;;m=نت 
-(lex.add.entry  
-'("nt" nil (((n i t) 0))))
-;;m=فيديو   
-(lex.add.entry  
-'("fydyw" nil (((v i) 0) ((d y uua) 0))))
-;;m=فيديو   
-(lex.add.entry  
-'("fiydoyuw" nil (((v i) 0) ((d y uua) 0))))
-;;m=الفيديو   
-(lex.add.entry  
-'("Alfydyw" nil (((ah a l) 0) ((v i) 0) ((d y uua) 0))))
-(lex.add.entry  
-'("Alofiydoyuw" nil (((ah a l) 0) ((v i) 0) ((d y uua) 0))))	
-(lex.add.entry  
-'("Alofiydoyuwu" nil (((ah a l) 0) ((v i) 0) ((d y uua) 0))))
-
-)
 
 (require 'lts)
 
@@ -435,36 +102,22 @@ t if this is a syl break, nil otherwise."
     t))
 )
 
-(define (ara_norm_lex_syllabify_phstress phones)
- (let ((syl nil) (syls nil) (p phones) (stress 0))
-    (while p
-     (set! syl nil)
-     (set! stress 0)
-     (while (and p (not (ara_norm_lex_sylbreak syl p)))
-       (if (string-matches (car p) "xxxx")
-           (begin
-             ;; whatever you do to identify stress
-             (set! stress 1)
-             (set syl (cons (car p-stress) syl)))
-           (set! syl (cons (car p) syl)))
-       (set! p (cdr p)))
-     (set! syls (cons (list (reverse syl) stress) syls)))
-    (reverse syls)))
-
-    ;; utf8-sampa map based on unitran 
-
-    ;; utf8-indic-sampa letter based one
-    (define (ara_norm_lts_function word features)
-      "(ara_norm_lts_function WORD FEATURES)
-Return pronunciation of word not in lexicon."
-      (let ((dword word) (phones) (syls) (aphones))
-        (set! aphones (ara_norm_map_modify (utf8explode dword)))
-        (set! phones (ara_norm_map_phones aphones))
-	(set! phones (sampa_lookup phones))
-        (set! phones (indic_unicode_lts sphones))
-        (set! syls (ara_norm_lex_syllabify_phstress phones))
-        (list word features syls)))
-    
+;(define (ara_norm_lex_syllabify_phstress phones)
+; (let ((syl nil) (syls nil) (p phones) (stress 0))
+;    (while p
+;     (set! syl nil)
+;     (set! stress 0)
+;     (while (and p (not (ara_norm_lex_sylbreak syl p)))
+;       (if (string-matches (car p) "xxxx")
+;           (begin
+;             ;; whatever you do to identify stress
+;             (set! stress 1)
+;             (set syl (cons (car p-stress) syl)))
+;           (set! syl (cons (car p) syl)))
+;       (set! p (cdr p)))
+;     (set! syls (cons (list (reverse syl) stress) syls)))
+;    (reverse syls)))
+  
 
 (define (sampa_lookup gphones)
   (let ((phlist nil) (sp nil))
@@ -477,82 +130,82 @@ Return pronunciation of word not in lexicon."
      gphones)
     (reverse phlist)))
 
-(define (indic_unicode_lts phlist)
-	(set! finallist (list))
-	(set! graphemecount 0)
-	(set! prevgrapheme (list))
-	(set! totgcnt (- (length phlist) 1))
-	(mapcar (lambda (ggg)
-		(if (symbol? (car ggg))
-		(begin
-		(cond
-			;; schwa deletion for the last consonant
-			((equal? graphemecount totgcnt)
-			(begin
-				(if (string-equal (phone_feature (car ggg) 'vc) "-")
-				(begin 
-					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") 
-					(set! finallist (append  finallist prevgrapheme)))
-					;(set! finallist (append finallist (list (car ggg)))) ;appropriate for hindi
-					(set! finallist (append finallist  ggg)) ; for generic (non-schwa final) indic
-				)
-				(begin 
-					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") 
-					(set! finallist (append finallist (list (car prevgrapheme)))))
-					(set! finallist (append finallist (list (car ggg))))
-				))
-			))
-			;; generic treatment for an intermediate grapheme
-			((and (> graphemecount 0) (< graphemecount totgcnt))
-			(begin
-				(cond 
-					;; If current is vowel, remove the previous schwa
-					((and (string-equal (phone_feature (car ggg) 'vc) "+") (string-equal (phone_feature (car prevgrapheme) 'vc) "-"))
-					(begin 
-						(set! finallist (append finallist (list (car prevgrapheme))))
-						(set! finallist (append finallist (list (car ggg))))
-					))
-					;; If current is consonant and previous is consonant, dump all of previous 
-					((and  (string-equal (phone_feature (car ggg) 'vc) "-") (string-equal (phone_feature (car prevgrapheme) 'vc) "-"))
-					(set! finallist (append finallist prevgrapheme)))
-					(t 
-					 t)
-				)
-			))
-			((and (eq? graphemecount 0) (string-equal (phone_feature (car ggg) 'vc) "+"))
-				(set! finallist (list (car ggg)))
-			)
-			(t 
-			t)
-		)
-		(set! graphemecount (+ 1 graphemecount))
-		(set! prevgrapheme ggg)
-		)
-		(begin 
-			(cond
-				((equal? (car ggg) '(P))
-					(set! finallist (append finallist (list (car prevgrapheme))))
-					(set! prevgrapheme (list))
-				)
-				((equal? (car ggg) '(M))
-					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") (set! finallist (append finallist prevgrapheme)))
-					(set! finallist (append finallist (list "nB")))
-					(set! prevgrapheme (list))
-				)
-				((equal? (car ggg) '(CD))
-					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") (set! finallist (append finallist prevgrapheme)))
-					(set! finallist (append finallist (list "nB")))
-					(set! prevgrapheme (list))
-				)
-				(t
-				t)
-				;(format t "debug: todo \n")
-			)
-			(set! graphemecount (+ 1 graphemecount))
-		)
-	)
-	) phlist)
-finallist)
+;(define (indic_unicode_lts phlist)
+;	(set! finallist (list))
+;	(set! graphemecount 0)
+;	(set! prevgrapheme (list))
+;	(set! totgcnt (- (length phlist) 1))
+;	(mapcar (lambda (ggg)
+;		(if (symbol? (car ggg))
+;		(begin
+;		(cond
+;			;; schwa deletion for the last consonant
+;			((equal? graphemecount totgcnt)
+;			(begin
+;				(if (string-equal (phone_feature (car ggg) 'vc) "-")
+;				(begin 
+;					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") 
+;					(set! finallist (append  finallist prevgrapheme)))
+;					;(set! finallist (append finallist (list (car ggg)))) ;appropriate for hindi
+;					(set! finallist (append finallist  ggg)) ; for generic (non-schwa final) indic
+;				)
+;				(begin 
+;					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") 
+;					(set! finallist (append finallist (list (car prevgrapheme)))))
+;					(set! finallist (append finallist (list (car ggg))))
+;				))
+;			))
+;			;; generic treatment for an intermediate grapheme
+;			((and (> graphemecount 0) (< graphemecount totgcnt))
+;			(begin
+;				(cond 
+;					;; If current is vowel, remove the previous schwa
+;					((and (string-equal (phone_feature (car ggg) 'vc) "+") (string-equal (phone_feature (car prevgrapheme) 'vc) "-"))
+;					(begin 
+;						(set! finallist (append finallist (list (car prevgrapheme))))
+;						(set! finallist (append finallist (list (car ggg))))
+;					))
+;					;; If current is consonant and previous is consonant, dump all of previous 
+;					((and  (string-equal (phone_feature (car ggg) 'vc) "-") (string-equal (phone_feature (car prevgrapheme) 'vc) "-"))
+;					(set! finallist (append finallist prevgrapheme)))
+;					(t 
+;					 t)
+;				)
+;			))
+;			((and (eq? graphemecount 0) (string-equal (phone_feature (car ggg) 'vc) "+"))
+;				(set! finallist (list (car ggg)))
+;			)
+;			(t 
+;			t)
+;		)
+;		(set! graphemecount (+ 1 graphemecount))
+;		(set! prevgrapheme ggg)
+;		)
+;		(begin 
+;			(cond
+;				((equal? (car ggg) '(P))
+;					(set! finallist (append finallist (list (car prevgrapheme))))
+;					(set! prevgrapheme (list))
+;				)
+;				((equal? (car ggg) '(M))
+;					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") (set! finallist (append finallist prevgrapheme)))
+;					(set! finallist (append finallist (list "nB")))
+;					(set! prevgrapheme (list))
+;				)
+;				((equal? (car ggg) '(CD))
+;					(if (string-equal (phone_feature (car prevgrapheme) 'vc) "-") (set! finallist (append finallist prevgrapheme)))
+;					(set! finallist (append finallist (list "nB")))
+;					(set! prevgrapheme (list))
+;				)
+;				(t
+;				t)
+;				;(format t "debug: todo \n")
+;			)
+;			(set! graphemecount (+ 1 graphemecount))
+;		)
+;	)
+;	) phlist)
+;finallist)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -565,8 +218,7 @@ finallist)
             (load (path-append ara_norm_ziad_hts::hts_dir 
                                "/usr/share/festival/voices/arabic/ara_norm_ziad_hts/festvox/ara_norm_ziad_char_phone_map.scm") t))
 	(load (path-append ara_norm_ziad_hts::hts_dir 
-                           "/usr/share/festival/voices/arabic/ara_norm_ziad_hts/festvox/unicode_sampa_mapping.scm"))
-
+                           "/usr/share/festival/voices/arabic/ara_norm_ziad_hts/festvox/unicode_sampa_mapping.scm"))))
 ; ;;;  Function called when word not found in lexicon
  (define (ara_norm_lts_function word features)
    "(ara_norm_lts_function WORD FEATURES)
@@ -574,36 +226,27 @@ finallist)
 
 ;   (format stderr "failed to find pronunciation for %s\n" word)
    (let ((dword (downcase word)))
-        (set! aphones (ara_norm_map_modify (utf8explode word)))
+        (set! aphones (ara_norm_map_modify (utf8explode dword)))
         (set! phones (ara_norm_map_phones aphones))
 	(set! phones (sampa_lookup phones))
-;        (set! syls (ara_norm_lex_syllabify_phstress phones))
 ;     ;; Note you may need to use a letter to sound rule set to do
 ;     ;; casing if the language has non-ascii characters in it.
+
      (if (lts.in.alphabet phones 'ara_norm)
  	(list
  	 phones
  	 features
+
+ 	 ; (format stderr "%s\n" word)
 ; 	 ;; This syllabification is almost certainly wrong for
 ; 	 ;; this language (its not even very good for English)
 ; 	 ;; but it will give you something to start off with
  	 (lex.syllabify.phstress
  	   (lts.apply phones 'ara_norm)))
- 	(begin
-; 	  (format stderr "unpronouncable word %s\n" word)
-; 	  ;; Put in a word that means "unknown" with its pronunciation
-;	  '("majhool" nil (((m a j) 0) ((h u:) 0) ((l) 0)))
 )
 )
-)
-;(let ((dword word) (phones) (syls) (aphones))
-;        (set! aphones (ara_norm_map_modify (utf8explode dword)))
-;        (set! phones (ara_norm_map_phones aphones))
-;	(set! phones (sampa_lookup phones))
-;        (set! syls (ara_norm_lex_syllabify_phstress phones))
-;        (list word features syls))
  )
-))
+
 ; ;; You may or may not be able to write a letter to sound rule set for
 ; ;; your language.  If its largely lexicon based learning a rule
 ; ;; set will be better and easier that writing one (probably).
@@ -857,6 +500,7 @@ finallist)
 	;;
 
 	;;;;do some normalisation
+	  ( # [ A i ] =  )	
 	  ( [ A F ] = a n )	;;alif+fathatan
 	  ( [ F A ] = a n )	;;fathatan+alif
 	  ( [ F ] = a n )	;;fathatan
@@ -1048,10 +692,11 @@ A postlexical rule form correcting phenomena over word boundaries."
 ;(if (probe_file (path-append ara_norm_ziad::dir "festvox/ara_norm_lex.out"))
 ;    (lex.set.compile.file (path-append ara_norm_ziad::dir 
 ;                                       "festvox/ara_norm_lex.out")))
-(ara_norm_addenda)
-;(if (probe_file (path-append ara_norm_ziad::dir "festvox/ara_norm_addenda.scm"))
-;    (load (path-append ara_norm_ziad::dir "festvox/ara_norm_addenda.scm")))
 
+(if (probe_file (path-append ara_norm_ziad_hts::hts_dir "/usr/share/festival/voices/arabic/ara_norm_ziad_hts/festvox/ara_norm_addenda.scm"))
+    (load (path-append ara_norm_ziad_hts::hts_dir "/usr/share/festival/voices/arabic/ara_norm_ziad_hts/festvox/ara_norm_addenda.scm")))
+
+(ara_norm_addenda)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;; Lexicon setup

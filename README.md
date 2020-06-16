@@ -38,3 +38,7 @@ Usage
 
 
 ### Web server (linux, windows)
+## Tutorials
+
+### Add a shortcut for festival TTS to read selection
+https://www.youtube.com/watch?v=4uKTamXonPs 

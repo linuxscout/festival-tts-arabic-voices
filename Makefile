@@ -4,6 +4,7 @@ SCRIPTS = ""
 VOICE_PACKAGE=ara_norm_ziad_hts
 VOICE=ara_norm_ziad_hts
 FESTIVAL_VOICES_DIR=/usr/share/festival/voices
+FESTIVAL_LANGUAGES_DIR=/usr/share/festival/languages
 MISHKAL=python3 ~/projects/mishkal-project/mishkal-2017-03-19/bin/mishkal-console.py
 all: test build
 
@@ -30,6 +31,8 @@ build:
 install:
 	# Installing shared data
 	echo "install"
+	sudo cp languages/language_arabic.scm  $(FESTIVAL_LANGUAGES_DIR)
+
 	cp releases/$(VOICE_PACKAGE).zip /tmp/
 	cd /tmp; unzip /tmp/$(VOICE_PACKAGE).zip
 	sudo mkdir -p $(FESTIVAL_VOICES_DIR)/arabic

@@ -36,6 +36,10 @@ Usage
 
 ### GUI: Linux
 
+ ```
+ $echo "السلام عليكم " |festival --tts --language arabic
+ ```
+ 
 
 ### Web server (linux, windows)
 ## Tutorials

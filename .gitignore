@@ -5,5 +5,7 @@
 *.scm~
 *.scm#*
 .#*.scm
+*.pyc
+/archives/*
 /releases/ara_norm_ziad_hts0.1.zip
-/script/__pycache__/bw.cpython-35.pyc
+

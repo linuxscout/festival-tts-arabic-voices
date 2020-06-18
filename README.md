@@ -8,36 +8,32 @@ Authors  | [Authors.md](https://github.com/linuxscout/festival-tts-arabic-voices
 Release  | 1.0
 License  |[GPL](https://github.com/linuxscout/festival-tts-arabic-voices/master/LICENSE)
 Tracker  |[linuxscout/festival-tts-arabic-voices/Issues](https://github.com/linuxscout/festival-tts-arabic-voices/issues)
-Mailinglist  |[<festival-tts-arabic-voices@googlegroups.com>](http://groups.google.com/group/festival-tts-arabic-voices/)
-Website  |[tahadz.com/mintiq](http://www.tahadz.com/minriq/)
 Source  |[Github](http://github.com/linuxscout/festival-tts-arabic-voices)
 
 
-Setup
-=====
+## Samples 
+
+-  [المثال الأول](https://soundcloud.com/linuxscout/arabic-voice-for-festival-text-to-speech-system)
+-   [المثال الثاني](https://soundcloud.com/linuxscout/arabic-voice-for-festival-text-to-speech-system-1)
+-  [المثال الثالث](https://soundcloud.com/linuxscout/arabic-voice-for-festival-text-to-speech-system-2)
+
+##Setup
+
 
 ### Debian/Ubuntu Linux
 
 1. Install necessary packages:
 
 ```
-sudo apt-get install festival
-sudo apt-get install hts_engine
 ```
 
 2. Clone festival-tts-arabic-voices project from GitHub:
 
 ```
 git clone https://github.com/linuxscout/festival-tts-arabic-voices.git
-cd festival-tts-arabic-voices
-make install
-```
-tests:
-```
-make test
 ```
 
-Usage
+## Usage
 =====
 
  ```
@@ -115,5 +111,5 @@ $play /tmp/out.ar_ziad.wav
 
 ## Tutorials
 
-### Add a shortcut for festival TTS to read selection
+#### Add a shortcut for festival TTS to read selection
 https://www.youtube.com/watch?v=4uKTamXonPs 

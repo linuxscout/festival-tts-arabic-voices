@@ -21,12 +21,20 @@ Setup
 1. Install necessary packages:
 
 ```
+sudo apt-get install festival
+sudo apt-get install hts_engine
 ```
 
 2. Clone festival-tts-arabic-voices project from GitHub:
 
 ```
 git clone https://github.com/linuxscout/festival-tts-arabic-voices.git
+cd festival-tts-arabic-voices
+make install
+```
+tests:
+```
+make test
 ```
 
 Usage

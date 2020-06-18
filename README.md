@@ -1,5 +1,8 @@
 #  Arabic voices for Festival TTS
 
+HTS Arabic voice for Festival TTS: is an arabic voice trained by [HTS technologie](http://hts.sp.nitech.ac.jp/)  to work on [Festival TTS system](http://www.cstr.ed.ac.uk/projects/festival/onlinedemo.html).
+
+The voice is HMM trained on [Nawar Arabic Speech Corpus.](http://en.arabicspeechcorpus.com/) 
 
 
 Features |   value
@@ -107,8 +110,11 @@ $mishkal "مرحبا أهلا بكم" |text2wave -eval "(voice_ara_norm_ziad_hts
 $play /tmp/out.ar_ziad.wav
 
 ```
-
-
+## Similar Projects
+* [espeak-ng ](http://github.com/espeak-ng/espeak-ng) espeak-ng TTS based on formant, it supports Arabic since 1.49 version 
+*[Abdullah Alrajeh](https://github.com/asrajeh/arabic-tts)  Abdullah Alrajeh Arabic TTS for Festival and Flite
+[Arabic Tacotron TTS by  Youssef Sharief ](https://github.com/youssefsharief/arabic-tacotron-tts)
+[Voice on Mozilla](voice.mozilla.org) 
 ## Tutorials
 
 #### Add a shortcut for festival TTS to read selection

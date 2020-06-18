@@ -1,31 +1,24 @@
 # Makefile
 
-SCRIPTS = ""
 VOICE_PACKAGE=ara_norm_ziad_hts
 VOICE=ara_norm_ziad_hts
 FESTIVAL_VOICES_DIR=/usr/share/festival/voices
 FESTIVAL_LANGUAGES_DIR=/usr/share/festival/languages
-MISHKAL=python3 ~/projects/mishkal-project/mishkal-2017-03-19/bin/mishkal-console.py
+MISHKAL=mishkal
 all: test build
 
 test:
-	echo "waraj~aHa Alt~aqoriyru Al~a*iy >aEad~ahu maEohadu >aboHaA^i haDabapi Alt~ibiti fiy Alo>akaAdiymiy~api AlS~iyniy~api liloEuluwmi sil >ano tasotamir~a darajaAtu AloHaraArapi wamusotawayaAtu Alr~uTuwbapi fiy Alo<irotifaAEi TawaAla ha*aA Aloqarono" | text2wave -eval "(voice_$(VOICE))" -o /tmp/out.ar_ziad.wav
+	echo "السَّلَامُ عَلَيْكُمْ" | text2wave -eval "(voice_$(VOICE))"  -o /tmp/out.ar_ziad.wav
 	play /tmp/out.ar_ziad.wav
-test2:
+
+test_tashkeel:
 	$(MISHKAL) "مرحبا أهلا بكم" |text2wave -eval "(voice_$(VOICE))" -o /tmp/out.ar_ziad.wav
 	play /tmp/out.ar_ziad.wav
-test3:
-	#$(MISHKAL) "مرحبا أهلا بكم" | xargs  -r0 python3 script/utf2tim.py | text2wave -eval "(voice_$(VOICE))" -o /tmp/out.ar_ziad.wav
-	#play /tmp/out.ar_ziad.wav
-test4:
+test_file:
 	$(MISHKAL) -f tests/samples/text1.txt |text2wave -eval "(voice_$(VOICE))" -o /tmp/out.ar_ziad.wav
 	play /tmp/out.ar_ziad.wav
-test_mishkal:
+tashkeel:
 	$(MISHKAL) "مرحبا أهلا بكم"
-test_bw:
-	python3 script/utf2tim.py "مرحبا أهلا بكم"
-test_mishkal_bw:
-	$(MISHKAL) "مرحبا أهلا بكم" | xargs  -r0 python3 script/utf2tim.py
 build: 
 
 install:

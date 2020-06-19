@@ -20,7 +20,7 @@ Source  |[Github](http://github.com/linuxscout/festival-tts-arabic-voices)
 -   [المثال الثاني](https://soundcloud.com/linuxscout/arabic-voice-for-festival-text-to-speech-system-1)
 -  [المثال الثالث](https://soundcloud.com/linuxscout/arabic-voice-for-festival-text-to-speech-system-2)
 
-##Setup
+## Setup
 
 
 ### Debian/Ubuntu Linux
@@ -52,7 +52,6 @@ cd festival-tts-arabic-voices.
 make install
 ```
 ## Usage
-=====
 
  ```
  $echo "السلام عليكم " |festival --tts --language arabic
@@ -127,9 +126,9 @@ $play /tmp/out.ar_ziad.wav
 ```
 ## Similar Projects
 * [espeak-ng ](http://github.com/espeak-ng/espeak-ng) espeak-ng TTS based on formant, it supports Arabic since 1.49 version 
-*[Abdullah Alrajeh](https://github.com/asrajeh/arabic-tts)  Abdullah Alrajeh Arabic TTS for Festival and Flite
-[Arabic Tacotron TTS by  Youssef Sharief ](https://github.com/youssefsharief/arabic-tacotron-tts)
-[Voice on Mozilla](voice.mozilla.org) 
+* [Abdullah Alrajeh](https://github.com/asrajeh/arabic-tts)  Abdullah Alrajeh Arabic TTS for Festival and Flite
+* [Arabic Tacotron TTS by  Youssef Sharief ](https://github.com/youssefsharief/arabic-tacotron-tts)
+* [Voice on Mozilla](voice.mozilla.org) 
 ## Tutorials
 
 #### Add a shortcut for festival TTS to read selection

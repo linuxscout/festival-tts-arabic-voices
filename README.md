@@ -7,7 +7,7 @@ The voice is HMM trained on [Nawar Arabic Speech Corpus.](http://en.arabicspeech
 
 Features |   value
 ---------|---------------------------------------------------------------------------------
-Authors  | [Authors.md](https://github.com/linuxscout/festival-tts-arabic-voices/master/AUTHORS.md)
+Authors  | [Authors.md](https://github.com/linuxscout/festival-tts-arabic-voices/blob/master/AUTHORS.md)
 Release  | 1.0
 License  |[GPL](https://github.com/linuxscout/festival-tts-arabic-voices/master/LICENSE)
 Tracker  |[linuxscout/festival-tts-arabic-voices/Issues](https://github.com/linuxscout/festival-tts-arabic-voices/issues)
@@ -132,4 +132,5 @@ $play /tmp/out.ar_ziad.wav
 ## Tutorials
 
 #### Add a shortcut for festival TTS to read selection
-https://www.youtube.com/watch?v=4uKTamXonPs م
+https://www.youtube.com/watch?v=4uKTamXonPs 
+

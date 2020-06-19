@@ -28,14 +28,29 @@ Source  |[Github](http://github.com/linuxscout/festival-tts-arabic-voices)
 1. Install necessary packages:
 
 ```
+sudo apt-get install festival
+sudo apt-get install hts_engine
+
 ```
+You can install Festival from pakcage manager from your linux distribution. Festival exists on Windows also.
+
+You can test festival by 
+```
+$festival
+$festival>(voice.list)
+```
+
 
 2. Clone festival-tts-arabic-voices project from GitHub:
 
 ```
 git clone https://github.com/linuxscout/festival-tts-arabic-voices.git
 ```
-
+3. Install voice:
+```
+cd festival-tts-arabic-voices.
+make install
+```
 ## Usage
 =====
 
@@ -118,4 +133,4 @@ $play /tmp/out.ar_ziad.wav
 ## Tutorials
 
 #### Add a shortcut for festival TTS to read selection
-https://www.youtube.com/watch?v=4uKTamXonPs 
+https://www.youtube.com/watch?v=4uKTamXonPs م

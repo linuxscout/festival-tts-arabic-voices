@@ -130,7 +130,8 @@ $play /tmp/out.ar_ziad.wav
 * [Arabic Tacotron TTS by  Youssef Sharief ](https://github.com/youssefsharief/arabic-tacotron-tts)
 * [Voice on Mozilla](voice.mozilla.org) 
 ## Tutorials
-
+#### Configure Screen reader
+https://linuxscout.gitbooks.io/arabic-text-to-speech-integration/content/ 
 #### Add a shortcut for festival TTS to read selection
 https://www.youtube.com/watch?v=4uKTamXonPs 
 

@@ -20,6 +20,10 @@ Source  |[Github](http://github.com/linuxscout/festival-tts-arabic-voices)
 -   [المثال الثاني](https://soundcloud.com/linuxscout/arabic-voice-for-festival-text-to-speech-system-1)
 -  [المثال الثالث](https://soundcloud.com/linuxscout/arabic-voice-for-festival-text-to-speech-system-2)
 
+### Demo online
+ You can test the voice with diacritics on:
+ [http://ar.arabicspeechcorpus.com/](http://ar.arabicspeechcorpus.com/) 
+
 ## Setup
 
 

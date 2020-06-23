@@ -33,7 +33,7 @@ Source  |[Github](http://github.com/linuxscout/festival-tts-arabic-voices)
 
 ```
 sudo apt-get install festival
-sudo apt-get install hts_engine
+sudo apt-get install htsengine
 
 ```
 You can install Festival from pakcage manager from your linux distribution. Festival exists on Windows also.

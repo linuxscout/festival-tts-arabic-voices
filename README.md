@@ -55,6 +55,10 @@ git clone https://github.com/linuxscout/festival-tts-arabic-voices.git
 cd festival-tts-arabic-voices.
 make install
 ```
+### Install server under Docker
+[A Docker image for a relatively light-weight full Arabic speech synthesis system](https://github.com/nawarhalabi/festival-tts-arabic-voices-docker) 
+
+
 ## Usage
 
  ```

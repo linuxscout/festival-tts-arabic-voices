@@ -119,7 +119,7 @@ Reset global variables back to previous voice."
 
 (define (voice_ara_norm_ziad_hts)
   "(voice_ara_norm_ziad_hts)
-Define voice for limited domain: us."
+Define voice for limited domain: ar."
   ;; *always* required
   (voice_reset)
 
@@ -135,7 +135,7 @@ Define voice for limited domain: us."
   (ara_norm_ziad::select_lexicon)
   ;; For hts selection you probably don't want vowel reduction
   ;; the unit selection will do that
-  (if (string-equal "americanenglish" (Param.get 'Language))
+  (if (string-equal "arabic" (Param.get 'Language))
       (set! postlex_vowel_reduce_cart_tree nil))
 
   (ara_norm_ziad::select_phrasing)
@@ -165,11 +165,11 @@ Define voice for limited domain: us."
 
 (proclaim_voice
  'ara_norm_ziad_hts
- '((language english)
-   (gender female)
-   (dialect american)
+ '((language arabic)
+   (gender male)
+   (dialect nil)
    (description
-    "This voice provides an American English female voice using
+    "This voice provides an Arabic male voice using
      HTS.")))
 
 (provide 'ara_norm_ziad_hts)

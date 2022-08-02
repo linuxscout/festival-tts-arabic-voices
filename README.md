@@ -52,7 +52,7 @@ git clone https://github.com/linuxscout/festival-tts-arabic-voices.git
 ```
 3. Install voice:
 ```
-cd festival-tts-arabic-voices.
+cd festival-tts-arabic-voices
 make install
 ```
 ### Install server under Docker
